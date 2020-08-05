@@ -38,7 +38,7 @@
     <div class="header1">
         <input class="logo" type="image" src="{{asset('web/images/Marvel.jpg')}}">
         <ul class="ul1">
-            <li><a href=" {{ route('index') }}">Əsas</a></li>
+            <li><a href=" {{ route('site') }}">Əsas</a></li>
             <li><a href=" {{ route('studios') }}">Studiyalar</a></li>
             <li><a href="{{ route('gallery') }}">Qaleriya</a></li>
         </ul>
