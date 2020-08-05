@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,13 +14,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/','SiteController@index')->name('index');
-Route::get('/index','SiteController@index')->name('index');
+Route::get('/','SiteController@index')->name('site');
 Route::get('/contact','SiteController@contact')->name('contact');
 Route::get('/studios','SiteController@studios')->name('studios');
 Route::get('/studio/{id}','SiteController@studio')->name('studio');
 Route::get('/gallery','SiteController@gallery')->name('gallery');
-
+//
+Route::middleware(['auth','admin'])->group(function (){
+    Route::post('/logout','SignoutController@logout')->name('logout');
+    Route::get('/admin/dashboard','Admin\AdminController@dashboard')->name('admin.dashboard');
+    Route::get('/admin/studios','Admin\AdminController@studios')->name('admin.studios');
+    Route::post('/admin/add/studios','Admin\AdminController@dashboard')->name('admin.add.studios');
+});
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
