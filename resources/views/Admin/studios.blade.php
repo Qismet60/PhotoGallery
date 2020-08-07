@@ -18,76 +18,66 @@
 
             </div>
             <br><br>
-            <div class="w-50">
-
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                    Add Studios
-                </button>
-
-                <div class="modal fade text-light" id="exampleModal" tabindex="-1" role="dialog"
-                     aria-labelledby="exampleModalLabel"
-                     aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel"></h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body ">
-                                <form class="text-light">
-                                    <div class="form-group text-light">
-                                        <label class="text-light" for="exampleInputEmail1">Studia name</label>
-                                        <input type="text" class="form-control" id="exampleInputEmail1"
-                                               aria-describedby="emailHelp" placeholder="Enter email">
-                                    </div>
-
-                                </form>
-                                <form class="text-light">
-                                    <div class="form-group text-light">
-                                        <label class="text-light" for="exampleInputEmail1">Logo</label>
-                                        <input type="file" class="form-control" id="exampleInputEmail1"
-                                               aria-describedby="emailHelp" placeholder="Enter email">
-                                    </div>
-
-                                </form>
-                                <form class="text-light">
-                                    <div class="form-group text-light">
-                                        <label class="text-light" for="exampleInputEmail1">Email</label>
-                                        <input type="email" class="form-control" id="exampleInputEmail1"
-                                               aria-describedby="emailHelp" placeholder="Enter email">
-                                    </div>
-                                </form>
-                                <form class="text-light">
-                                    <div class="form-group text-light">
-                                        <label class="text-light" for="exampleInputEmail1">Number</label>
-                                        <input type="number" class="form-control" id="exampleInputEmail1"
-                                               aria-describedby="emailHelp" placeholder="Enter email">
-                                    </div>
-                                </form>
-                                <form class="text-light">
-                                    <div class="form-group text-light">
-                                        <label class="text-light" for="exampleInputEmail1">Address</label>
-                                        <input type="text" class="form-control" id="exampleInputEmail1"
-                                               aria-describedby="emailHelp" placeholder="Enter email">
-                                    </div>
-                                </form>
-                                <form class="text-light">
-                                    <div class="form-group text-light">
-                                        <label class="text-light" for="exampleInputEmail1">Work Desc</label>
-                                        <textarea name="desc" id="desc" cols="60" rows="2"></textarea>
-                                    </div>
-                                </form>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary">Save changes</button>
-                            </div>
+            <div style="width:100%;border: 2px solid red;border-radius: 20px;padding: 10px;">
+                <label for="" class="text-light">Add Studios</label>
+                <form id="logo" enctype="multipart/form-data">
+                    <div class="w-50 p-1 float-left">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Studio name</label>
+                            <input type="text" name="name" class="form-control" placeholder="Studio name">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Email</label>
+                            <input type="email" name="email" class="form-control" placeholder="Enter email">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Studio logo</label>
+                            <input type="file" name="logo" class="form-control">
                         </div>
                     </div>
-                </div>
+                    <div style="20px;"></div>
+                    <div class="w-50 p-1 float-left">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Studio number</label>
+                            <input type="number" name="number" class="form-control" placeholder="Enter number">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Studio address</label>
+                            <input type="text" name="address" class="form-control" placeholder="Enter address">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Desc</label>
+                            <textarea name="about" id="about" cols="65" rows="2"></textarea>
+                        </div>
+                    </div>
+                </form>
+                <button class="btn btn-info save">Save</button>
+
             </div>
         </div>
     </section>
+    <script>
+        $('.save').click(function () {
+            let data = new FormData($('#logo')[0]);
+            console.log(data);
+            data.append("_token", "{{ csrf_token() }}");
+            $.ajax({
+                type:"post",
+                url:"{{ route('admin.add.studio') }}",
+                cahce: false,
+                contentType: false,
+                processData: false,
+                data:data,
+                success:function (response)
+                {
+                    $('input[name=name]').val("");
+                    $('input[name=email]').val("");
+                    $('input[name=number]').val("");
+                    $('input[name=address]').val("");
+                    $('input[name=logo]').val("");
+                    $('textarea[name=about]').val("");
+                }
+            })
+        });
+    </script>
 @endsection
