@@ -89,6 +89,7 @@
             <li><a href="{{route('site')}}"> <i class="fa fa-globe"></i>Web site </a></li>
             <li><a href="{{route('admin.dashboard')}}"> <i class="icon-home"></i>Dashboard </a></li>
             <li><a href="{{route('admin.studios')}}"> <i class="fa fa-newspaper-o"></i>Studios</a></li>
+            <li><a href="{{route('admin.studio.works')}}"> <i class="fa fa-newspaper-o"></i>Works</a></li>
         </ul>
 
     </nav>
