@@ -24,7 +24,7 @@ Route::middleware(['auth','admin'])->group(function (){
     Route::post('/logout','SignoutController@logout')->name('logout');
     Route::get('/admin/dashboard','Admin\AdminController@dashboard')->name('admin.dashboard');
     Route::get('/admin/studios','Admin\AdminController@studios')->name('admin.studios');
-    Route::post('/admin/add/studios','Admin\AdminController@dashboard')->name('admin.add.studios');
+    Route::post('/admin/add_studio','Admin\StudioController@newStudio')->name('admin.add.studio');
 });
 Auth::routes();
 
