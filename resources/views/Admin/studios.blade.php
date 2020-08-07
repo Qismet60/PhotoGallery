@@ -5,19 +5,7 @@
     <br>
     <section class="no-padding-top no-padding-bottom">
         <div class="container-fluid">
-            <div class="w-75">
-                <ul class="list-group">
-                    <li class="bg-dark text-light list-group-item d-flex justify-content-between align-items-center">
-                        Cras justo odio
-                        <button class="btn btn-info">Add</button>
-                    </li>
 
-                </ul>
-            </div>
-            <div class="pagination">
-
-            </div>
-            <br><br>
             <div style="width:100%;border: 2px solid red;border-radius: 20px;padding: 10px;">
                 <label for="" class="text-light">Add Studios</label>
                 <form id="logo" enctype="multipart/form-data">
@@ -63,7 +51,7 @@
             data.append("_token", "{{ csrf_token() }}");
             $.ajax({
                 type:"post",
-                url:"{{ route('admin.add.studio') }}",
+                url:"{{ route('add.studio') }}",
                 cahce: false,
                 contentType: false,
                 processData: false,
