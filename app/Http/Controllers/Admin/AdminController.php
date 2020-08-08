@@ -25,7 +25,9 @@ class AdminController extends Controller
     public function studioWorks()
     {
         $studios = Studios::all();
-        return view('admin.studio_work',compact('studios'));
+//        $studio_id = Studios::count();
+        return view('admin.studio_work', compact('studios'));
+
     }
 
 }

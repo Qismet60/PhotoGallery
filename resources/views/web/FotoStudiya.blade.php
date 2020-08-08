@@ -45,18 +45,11 @@
 <pre align="center" class="hak"><h1><i>Studiyalar</i></h1></pre>
 
 <div class="studiyolar">
+    @foreach($studios as $studio)
     <div>
-        <input width="260px" height="129.5px" type="image" src="{{asset('web/images/first.jpeg')}}">
+        <input width="260px" height="129.5px" type="image" src="{{ asset('web/images/logo'.'/'.$studio->logo) }}">
     </div>
-    <div>
-        <input width="260px" height="129.5px" type="image" src="{{asset('web/images/kengerli.png')}}">
-    </div>
-    <div>
-        <input width="260px" height="129.5px" type="image" src="{{asset('web/images/weddring.png')}}">
-    </div>
-    <div>
-        <input width="260px" height="129.5px" type="image" src="{{asset('web/images/logo10.jpg')}}">
-    </div>
+    @endforeach
 </div>
 
 @endsection

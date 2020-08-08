@@ -15,14 +15,9 @@ class Studios extends Model
         self::creating(function ($model) {
             $logo = $model->logo->getClientOriginalName();
             $model->logo->move('web/images/logo', $logo);
-
             $model->logo = $logo;
-
         });
     }
 
-    public function works()
-    {
-        return $this->hasMany(StudioWork::class, 'studios_id', 'id');
-    }
+
 }

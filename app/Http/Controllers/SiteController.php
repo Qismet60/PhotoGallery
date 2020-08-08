@@ -2,13 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Studios;
 use Illuminate\Http\Request;
 
 class SiteController extends Controller
 {
     public function index()
     {
-        return view('web.FotoStudiya');
+        $studios = Studios::all();
+        return view('web.FotoStudiya',compact('studios'));
     }
 
     public function contact()
