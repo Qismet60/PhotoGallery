@@ -28,8 +28,9 @@ class SiteController extends Controller
         return view('web.studios');
     }
 
-    public function studio($id)
+    public function studio(Request $request, int $id)
     {
+
         return view('web.studio');
     }
 }

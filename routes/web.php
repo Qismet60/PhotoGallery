@@ -14,8 +14,9 @@ Route::middleware(['auth','admin'])->group(function (){
     Route::post('/logout','SignoutController@logout')->name('logout');
     Route::get('/admin/dashboard','Admin\AdminController@dashboard')->name('admin.dashboard');
     Route::get('/admin/studios','Admin\AdminController@studios')->name('admin.studios');
+    Route::get('/admin/works','Admin\WorkController@works')->name('admin.works');
     Route::post('/add_studio','Admin\StudioController@newStudio')->name('add.studio');
+    Route::post('/add/','Admin\WorkController@newWork')->name('add');
 });
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
