@@ -11,11 +11,8 @@
                                 <div class="icon"><i class="icon-user-1"></i></div><strong>All Studios</strong>
                             </div>
                             <div class="number dashtext-1">
-                                60
+                                {{ $studioCount }}
                             </div>
-                        </div>
-                        <div class="progres">
-                            <div><button class="btn btn-outline-warning">Show</button></div>
                         </div>
                     </div>
                 </div>

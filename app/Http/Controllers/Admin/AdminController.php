@@ -9,7 +9,8 @@ class AdminController extends Controller
 {
     public function dashboard()
     {
-        return view('admin.dashboard');
+        $studioCount = Studios::count();
+        return view('admin.dashboard',compact('studioCount'));
     }
 
     public function studios()
@@ -25,7 +26,6 @@ class AdminController extends Controller
     public function studioWorks()
     {
         $studios = Studios::all();
-//        $studio_id = Studios::count();
         return view('admin.studio_work', compact('studios'));
 
     }
