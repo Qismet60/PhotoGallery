@@ -46,10 +46,7 @@
 
 <div class="studiyolar">
     @foreach($studios as $studio)
-    <div>
-        <input width="260px" height="129.5px" type="image" src="{{ asset('web/images/logo'.'/'.$studio->logo) }}"><br>
-        <a href="/studio/{{$studio->id}}">Show more`</a>
-    </div>
+        <a href="/studio/{{ $studio->id }}"><img class="studio_img" src="{{ asset('web/images/logo'.'/'.$studio->logo) }}"></a>
     @endforeach
 </div>
 

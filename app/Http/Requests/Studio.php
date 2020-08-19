@@ -33,7 +33,7 @@ class Studio extends FormRequest
             'email' => ['required', 'email', 'min:6', 'max:20'],
             'number' => ['required', 'numeric','min:10'],
             'address' => ['required', 'string', 'min:4', 'max:30'],
-            'about' => ['required', 'string', 'min:10', 'max:40'],
+            'about' => ['required', 'string', 'min:10', 'max:3000'],
             'logo' => ['required', 'image', 'mimes:jpeg,png,jpg', 'max:10000']
         ];
     }

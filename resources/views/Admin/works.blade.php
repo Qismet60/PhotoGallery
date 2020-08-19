@@ -42,7 +42,7 @@
             formdata.append('studios_id',studios_id)
             formdata.append('_token'," {{ csrf_token() }}")
             $.ajax({
-                url:"add/"+studios_id,
+                url:"/add",
                 type:"POST",
                 cache: false,
                 contentType: false,

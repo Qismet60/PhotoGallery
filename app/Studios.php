@@ -18,6 +18,4 @@ class Studios extends Model
             $model->logo = $logo;
         });
     }
-
-
 }

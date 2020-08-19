@@ -31,6 +31,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="{{asset('web/css/index.css')}}">
+    <link rel="stylesheet" href="{{asset('web/css/s.css')}}">
 </head>
 <body>
 
@@ -40,19 +41,21 @@
         <ul class="ul1">
             <li><a href=" {{ route('site') }}">Əsas</a></li>
             <li><a href=" {{ route('studios') }}">Studiyalar</a></li>
-            <li><a href="{{ route('gallery') }}">Qaleriya</a></li>
+            {{--            <li><a href="{{ route('gallery') }}">Qaleriya</a></li>--}}
         </ul>
 
-        <ul class="ul2">
-            <li><a href="https://www.instagram.com/karimli_19/"><i class="fab fa-instagram"></i></a></li>
-            <li><a href="https://www.facebook.com/vusal.huseynli.3958"><i class="fab fa-facebook-f"></i></a></li>
-            <li><a href="https://twitter.com/huseynvsal1"><i class="fab fa-twitter"></i></a></li>
-            <li><a href="https://www.youtube.com/channel/UCnEAKOKpDET4VK_acWhsDvw?view_as=subscriber"><i
-                        class="fab fa-youtube"></i></a></li>
-            <li><a href="{{ route('contact') }}">
-                    <button>Əlaqə</button>
-                </a></li>
-        </ul>
+{{--        <ul class="ul2">--}}
+{{--            <li><a href="https://www.instagram.com/karimli_19/"><i class="fab fa-instagram"></i></a></li>--}}
+{{--            <li><a href="https://www.facebook.com/vusal.huseynli.3958"><i class="fab fa-facebook-f"></i></a></li>--}}
+{{--            <li><a href="https://twitter.com/huseynvsal1"><i class="fab fa-twitter"></i></a></li>--}}
+{{--            <li><a href="https://www.youtube.com/channel/UCnEAKOKpDET4VK_acWhsDvw?view_as=subscriber"><i--}}
+{{--                        class="fab fa-youtube"></i></a></li>--}}
+{{--            <li>--}}
+{{--                <a href="{{ route('contact') }}">--}}
+{{--                    <button>Əlaqə</button>--}}
+{{--                </a>--}}
+{{--            </li>--}}
+{{--        </ul>--}}
     </div>
 
     @yield('main')

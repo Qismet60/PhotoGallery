@@ -35,7 +35,7 @@
                         </div>
                         <div class="form-group">
                             <label for="exampleInputEmail1">Desc</label>
-                            <textarea name="about" id="about" cols="65" rows="2"></textarea>
+                            <textarea style="border-radius: 8px;" name="about" id="about" cols="56" rows="2"></textarea>
                         </div>
                     </div>
                 </form>
